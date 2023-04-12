@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Perfil de {{ user.username | upper }} </h2>
+    <img class="img-thumbnail rounded-circle" src="{{ user.profile.picture.url }}" alt="" style="width: 8rem; height: 8rem;">
+    <p> </p>
+
+    <div class="card" style="width: 28rem;">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>Usuario: </strong>{{ user.username }}</li>
+          <li class="list-group-item"><strong>Nombre y Apellido: </strong>{{ user.first_name }} {{ user.last_name }}</li>
+          <li class="list-group-item"><strong>Localidad: </strong>{{ user.profile.location }}</li>
+        </ul>
+        <div class="card-body">
+            <a href="#" class="card-link">Editar Perfil</a>
+        </div>
+      </div>
+
+{% endblock content %}
+
+
+
